@@ -17,10 +17,9 @@ services:
           property: connectionString
     healthCheckPath: /health
 
-  # Frontend Web Service
-  - type: web
+  # Frontend Static Site
+  - type: static
     name: recruitment-frontend
-    env: static
     plan: free
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: ./client/dist
@@ -32,4 +31,3 @@ services:
 databases:
   - name: recruitment-db
     plan: free
-
