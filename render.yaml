@@ -18,9 +18,10 @@ services:
     healthCheckPath: /health
 
   # Frontend Static Site
-  - type: static
+  - type: web
     name: recruitment-frontend
-    plan: free
+    env: static
+    plan: starter
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: ./client/dist
     routes:
